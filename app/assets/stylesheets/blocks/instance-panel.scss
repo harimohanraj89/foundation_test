@@ -1,0 +1,27 @@
+.instance-panel {
+  margin: $global-margin 0;
+  padding: $global-margin;
+
+  background: $light-gray;
+  border: 1px solid $medium-gray;
+  border-radius: 5px;
+}
+
+@mixin instance-panel__label($background: $medium-gray, $color: $black) {
+  padding: $global-margin/2;
+  background: $background;
+  color: $color;
+  border-radius: 5px;
+}
+
+.instance-panel__label {
+  @include instance-panel__label;
+}
+
+.instance-panel__label--published {
+  @include instance-panel__label($success-color, $white);
+}
+
+.instance-panel__label--draft {
+  @include instance-panel__label($alert-color, $white);
+}

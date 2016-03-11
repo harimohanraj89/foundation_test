@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="title-bar" data-responsive-toggle="topnav" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+    <div class="top-bar" id="topnav">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">General Assembly</li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li>
+              <a href="#">Programs</a>
+              <ul class="menu vertical">
+                <li><a href="#">All Programs</a></li>
+                <li><a href="#">New Program</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Instances</a>
+              <ul class="menu vertical">
+                <li><a href="#">Upcoming Instances</a></li>
+                <li><a href="#">All Instances</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Partnerships</a>
+              <ul class="menu vertical">
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= yield %>
+      </div>
+    </div>
+
+  </body>
+</html>
